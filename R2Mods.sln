@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoonerCoins", "LoonerCoins\LoonerCoins.csproj", "{C52FCC45-1446-4ADB-A905-8F3950C25798}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C52FCC45-1446-4ADB-A905-8F3950C25798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C52FCC45-1446-4ADB-A905-8F3950C25798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C52FCC45-1446-4ADB-A905-8F3950C25798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C52FCC45-1446-4ADB-A905-8F3950C25798}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FA949E9-EC97-402D-B056-21A583D5AA2A}
+	EndGlobalSection
+EndGlobal
