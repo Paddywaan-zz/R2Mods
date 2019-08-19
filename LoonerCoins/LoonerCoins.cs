@@ -36,8 +36,8 @@ namespace Paddywan
         public void Awake()
         {
             increaseDroprate = Config.Wrap<bool>("LoonerCoins", "increaseDropRate", "If enabled, the configuration values will be utilised. Disable to play with vanilla droprate.", true);
-            dropChance = Config.Wrap<float>("LoonerCoins", "dropChance", "The initial value to drop coins. 1% vanilla, 5% recomended.", 5f);
-            dropMulti = Config.Wrap<float>("LoonerCoins", "dropMultiplier", "The multiplier for which, after every lunar coin is dropped, modifies the current dropchance. Results in deminishing returns. 0.5f vanilla, 0.75 recomended.", 0.75f);
+            dropChance = Config.Wrap<float>("LoonerCoins", "dropChance", "The initial value to drop coins. 1% vanilla, 3% recommended.", 3f);
+            dropMulti = Config.Wrap<float>("LoonerCoins", "dropMultiplier", "The multiplier for which, after every lunar coin is dropped, modifies the current dropchance. Results in diminishing returns. 0.5f vanilla, 0.75 recommended.", 0.75f);
 
             On.RoR2.Run.Start += Run_Start;
             On.RoR2.Run.BeginGameOver += Run_BeginGameOver;
