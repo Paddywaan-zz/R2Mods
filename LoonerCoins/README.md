@@ -11,7 +11,9 @@ Place inside of /Bepinex/Plugins
 Run the game & exit to generate the configuration file.
 
 > increaseDropRate - If enabled, the configuration values will be utilised. Disable to play with vanilla droprate.
+
 > dropChance - The initial value to drop coins. 1% vanilla, 3% recommended.", 3f);
+
 > dropMultiplier - The multiplier for which, after every lunar coin is dropped, modifies the current dropchance. Results in diminishing returns. 0.5f vanilla, 0.75 recommended.
 
 ## Changelog
