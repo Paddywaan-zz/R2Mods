@@ -6,20 +6,12 @@ using System.Collections.Generic;
 using paddywan;
 using System.IO;
 using System;
-using System.Linq;
 using RoR2.Networking;
 using UnityEngine.Networking;
-using R2API;
 using R2API.Utils;
-using MonoMod.RuntimeDetour;
-using MonoMod.Utils;
-using Mono.Cecil;
 using MonoMod.Cil;
-using MonoMod;
-using Paddywan;
 using System.Reflection;
 using BepInEx.Configuration;
-using Mono.Cecil.Cil;
 
 namespace Paddywan
 {
@@ -56,7 +48,6 @@ namespace Paddywan
         private void coinDropHook(ILContext il)
         {
             var c = new ILCursor(il);
-            Debug.Log(il);
             c.GotoNext(
                 x => x.MatchLdcR4(1f),
                 x => x.MatchLdloc(3),
@@ -260,7 +251,6 @@ namespace Paddywan
         private string coinToJSON(PlayerCoinContainer pc)
         {
             string strJsontest = JsonUtility.ToJson(pc);
-            //Debug.Log(strJsontest);
             return strJsontest;
         }
 
