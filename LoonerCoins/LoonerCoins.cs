@@ -19,7 +19,7 @@ namespace Paddywan
     [BepInPlugin("com.Paddywan."+modname, modname, modver)]
     public class LoonerCoins : BaseUnityPlugin
     {
-        private const string modname = "LoonerCoins", modver = "1.0.0";
+        private const string modname = "LoonerCoins", modver = "1.0.1";
         private List<PlayerCoinContainer> PCValues;
         private static string PLAYER_COIN_CACHE = BepInEx.Paths.ConfigPath + "\\LoonerCoinCache.json";
         ConfigWrapper<bool> increaseDroprate;
@@ -36,8 +36,9 @@ namespace Paddywan
             On.RoR2.Run.SetupUserCharacterMaster += Run_SetupUserCharacterMaster;
             On.RoR2.Chat.UserChatMessage.ConstructChatString += UserChatMessage_ConstructChatString;
             On.RoR2.Stage.Start += Stage_Start;
+            On.RoR2.TeleporterInteraction.Start += TeleporterInteraction_Start;
             BindingFlags allFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly;
-            var initDelegate = typeof(PlayerCharacterMasterController).GetNestedTypes(allFlags)[0].GetMethodCached(name: "<Init>b__54_0");
+            var initDelegate = typeof(PlayerCharacterMasterController).GetNestedTypes(allFlags)[0].GetMethodCached(name: "<Init>b__56_0");
 
             if (increaseDroprate.Value)
             {
@@ -45,12 +46,21 @@ namespace Paddywan
             }
         }
 
+        private void TeleporterInteraction_Start(On.RoR2.TeleporterInteraction.orig_Start orig, TeleporterInteraction self)
+        {
+            var num = 0.33f;
+            self.baseShopSpawnChance = num;
+            orig(self);
+            self.baseShopSpawnChance = num;
+            Debug.Log($"Shop chance = {num}");
+        }
+
         private void coinDropHook(ILContext il)
         {
             var c = new ILCursor(il);
             c.GotoNext(
                 x => x.MatchLdcR4(1f),
-                x => x.MatchLdloc(3),
+                x => x.MatchLdloc(out _),
                 x => x.MatchLdfld<PlayerCharacterMasterController>("lunarCoinChanceMultiplier"),
                 x => x.MatchMul(),
                 x => x.MatchLdcR4(0f)
