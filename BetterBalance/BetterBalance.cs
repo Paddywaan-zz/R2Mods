@@ -99,9 +99,6 @@ namespace Paddywan
             cChronoChance = Config.Wrap("ChronoBauble", "ChronoProcChance", "The chance per hit per item to apply a single slow stack", _chronoChance);
             _chronoChance = (cChronoChance.Value > _chronoMin && cChronoChance.Value <= _chronoMax) ? cChronoChance.Value : _chronoChance;
 
-            Delegate asd;
-            new Hook(RoR2.GlobalEventManager.OnHitEnemy., asd);
-
             IL.RoR2.GlobalEventManager.OnHitEnemy += (il) =>
             {
                 var c = new ILCursor(il);
