@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TMFBalancedInteractables", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorpseBloomPlusPlus", "CorpseBloomPlusPlus\CorpseBloomPlusPlus.csproj", "{A0DEC514-DF63-4457-A990-5F6EBB227125}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BepinTemplate", "BepinTemplate\BepinTemplate.csproj", "{3DEC0DCC-E931-4B0C-AD55-8A21E233A06B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A0DEC514-DF63-4457-A990-5F6EBB227125}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0DEC514-DF63-4457-A990-5F6EBB227125}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0DEC514-DF63-4457-A990-5F6EBB227125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DEC0DCC-E931-4B0C-AD55-8A21E233A06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DEC0DCC-E931-4B0C-AD55-8A21E233A06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DEC0DCC-E931-4B0C-AD55-8A21E233A06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DEC0DCC-E931-4B0C-AD55-8A21E233A06B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
