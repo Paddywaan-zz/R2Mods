@@ -496,4 +496,10 @@
   <Target Name="PreCompileWin" BeforeTargets="Build" Condition=" '$(OS)' == 'Windows_NT' ">
     <Exec Command="paket.exe update" WorkingDirectory="../.paket" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Debug (copy /Y "$(TargetDir)$(TargetFileName)" "C:\Program Files\SteamLibrary\steamapps\common\Risk of Rain 2\BepInEx\plugins\dev\$(TargetFileName)")
+
+
+if $(ConfigurationName) == Release (powershell Compress-Archive -Path '$(TargetDir)$(TargetFileName)', '$(TargetDir)icon.png', '$(TargetDir)manifest.json', '$(ProjectDir)README.md' -DestinationPath '$(TargetDir)\$(ProjectName).zip' -Force)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorpseBloomPlusPlus", "Corp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BepinTemplate", "BepinTemplate\BepinTemplate.csproj", "{3DEC0DCC-E931-4B0C-AD55-8A21E233A06B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuerySteamGameLoc", "QuerySteamGameLoc\QuerySteamGameLoc.csproj", "{169A53BE-C5CD-418E-B4EC-033D8B23987F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3DEC0DCC-E931-4B0C-AD55-8A21E233A06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DEC0DCC-E931-4B0C-AD55-8A21E233A06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DEC0DCC-E931-4B0C-AD55-8A21E233A06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{169A53BE-C5CD-418E-B4EC-033D8B23987F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169A53BE-C5CD-418E-B4EC-033D8B23987F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169A53BE-C5CD-418E-B4EC-033D8B23987F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169A53BE-C5CD-418E-B4EC-033D8B23987F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
