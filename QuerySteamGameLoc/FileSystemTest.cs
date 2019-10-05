@@ -14,7 +14,9 @@ namespace SteamGameLocation
             object folderObject = Registry.GetValue(steamRegKeyLocation, regValue, string.Empty);
             if (folderObject != null && (string)folderObject != string.Empty)
             {
-                SteamFolder = (string)folderObject;
+                
+                SteamFolder = ((string)folderObject).Replace('/', '\\');
+                Console.WriteLine(SteamFolder);
             }
             else
             {
@@ -66,7 +68,7 @@ namespace SteamGameLocation
 
                 if (Directory.Exists(gamePath))
                 {
-                    return gamePath;
+                    return gamePath.Replace("\\\\", "\\");
                 }
             }
 
