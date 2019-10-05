@@ -514,7 +514,6 @@ set /p RORDIR=&lt;rorDirectory.txt
 del rorDirectory.txt
 if $(ConfigurationName) == Debug (copy /y $(targetPath) "%25RORDIR%25\BepInEx\plugins\dev\$(TargetFileName)")
 
-$(AssemblyVersion)
 if $(ConfigurationName) == Release (powershell -Command "(gc manifest.template) -replace '\[MODVER\]', '@(VersionNumber)' | Out-File -encoding ASCII manifest.json")
 if $(ConfigurationName) == Release (powershell Compress-Archive -Path '$(TargetDir)$(TargetFileName)', '$(TargetDir)icon.png', '$(TargetDir)manifest.json', '$(ProjectDir)README.md' -DestinationPath '$(TargetDir)\$(ProjectName).zip' -Force)</PostBuildEvent>
   </PropertyGroup>
