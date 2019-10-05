@@ -19,7 +19,7 @@ namespace Paddywan
     [BepInPlugin("com.Paddywan."+modname, modname, modver)]
     public class LoonerCoins : BaseUnityPlugin
     {
-        private const string modname = "LoonerCoins", modver = "1.0.1";
+        public const string modname = "LoonerCoins", modver = "1.0.2";
         private List<PlayerCoinContainer> PCValues;
         private static string PLAYER_COIN_CACHE = BepInEx.Paths.ConfigPath + "\\LoonerCoinCache.json";
         ConfigWrapper<bool> increaseDroprate;

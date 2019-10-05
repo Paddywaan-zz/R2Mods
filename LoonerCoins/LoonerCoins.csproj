@@ -496,12 +496,26 @@
   <Target Name="PreCompileWin" BeforeTargets="Build" Condition=" '$(OS)' == 'Windows_NT' ">
     <Exec Command="paket.exe update" WorkingDirectory="../.paket" />
   </Target>
+  <Target Name="PostBuildMacros">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="Targets" />
+    </GetAssemblyIdentity>
+    <ItemGroup>
+      <VersionNumber Include="$([System.Text.RegularExpressions.Regex]::Replace(&quot;%(Targets.Version)&quot;, &quot;^(.+?)(\.0+)$&quot;, &quot;$1&quot;))" />
+    </ItemGroup>
+  </Target>
   <PropertyGroup>
+    <PostBuildEventDependsOn>
+      $(PostBuildEventDependsOn);
+      PostBuildMacros;
+    </PostBuildEventDependsOn>
     <PostBuildEvent>$(SolutionDir)QuerySteamGameLoc.exe "Risk of Rain 2" 632360 &gt; rorDirectory.txt
 set /p RORDIR=&lt;rorDirectory.txt
 del rorDirectory.txt
 if $(ConfigurationName) == Debug (copy /y $(targetPath) "%25RORDIR%25\BepInEx\plugins\dev\$(TargetFileName)")
 
+$(AssemblyVersion)
+if $(ConfigurationName) == Release (powershell -Command "(gc manifest.template) -replace '\[MODVER\]', '@(VersionNumber)' | Out-File -encoding ASCII manifest.json")
 if $(ConfigurationName) == Release (powershell Compress-Archive -Path '$(TargetDir)$(TargetFileName)', '$(TargetDir)icon.png', '$(TargetDir)manifest.json', '$(ProjectDir)README.md' -DestinationPath '$(TargetDir)\$(ProjectName).zip' -Force)</PostBuildEvent>
   </PropertyGroup>
 </Project>

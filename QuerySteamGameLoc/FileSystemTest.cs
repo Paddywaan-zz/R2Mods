@@ -5,8 +5,12 @@ using System.Linq;
 using System.Text;
 using Microsoft.Win32;
 
+
 namespace SteamGameLocation
 {
+    /// <summary>
+    /// Credit to @MisterName
+    /// </summary>
     public class FileSystemTest
     {
         public FileSystemTest(string steamRegKeyLocation, string regValue)
@@ -16,7 +20,6 @@ namespace SteamGameLocation
             {
                 
                 SteamFolder = ((string)folderObject).Replace('/', '\\');
-                Console.WriteLine(SteamFolder);
             }
             else
             {
