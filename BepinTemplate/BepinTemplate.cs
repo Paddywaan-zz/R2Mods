@@ -14,10 +14,10 @@ namespace YourUsername
     /// WARNING! THIS IS THE BASE TEMPLATE, BUILDING THIS PROJECT WILL EXECUTE A UTILITY/HELPER WHICH FINDS YOUR DEFAULT ROR2 INSTALL LOCATION,
     /// AND WILL PLACE THE BUILT MOD/DLL INTO A /Plugins/dev/ FOLDER! Source: https://github.com/Paddywaan/R2Mods/blob/master/QuerySteamGameLoc
     /// You can prevent this automated execution by removing the first block inside the "Build-Events" tab of the Project Properties, and replacing it with the hardcoded alternative:
-    /// if $(ConfigurationName) == Debug (copy /Y "$(TargetDir)$(TargetFileName)" "C:\Program Files\SteamLibrary\steamapps\common\Risk of Rain 2\BepInEx\plugins\dev\$(TargetFileName)")
+    /// if $(ConfigurationName) == Debug (copy /Y "$(TargetDir)$(TargetFileName)" "[YOUR STEAM LIBRARY GOES HERE]\steamapps\common\Risk of Rain 2\BepInEx\plugins\dev\$(TargetFileName)")
     /// </summary>
     [BepInDependency("com.bepis.r2api")]
-    [BepInPlugin("com.YourUsername." + modname, modname, modver)]
+    [BepInPlugin("com.YourUserName." + modname, modname, modver)]
     public class BepinTemplate : BaseUnityPlugin
     {
         private const string modname = "BepinTemplate", modver = "1.0.0";
